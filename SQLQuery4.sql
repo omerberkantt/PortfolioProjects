@@ -144,8 +144,8 @@ Insert into #PercentPopulationVaccination
  --,(RollingPeopleVaccinated/population)*100
  From PortfolioProject1..coviddeaths dea
  join PortfolioProject1..CovidVaccinations vac
-	On dea.location = location
-	and dea.date = date
+	On dea.location = vac.location
+	and dea.date = vac.date
 where dea.continent is not null  
 --order by 2,3 
 
@@ -163,8 +163,8 @@ Create View PercentPopulationVaccinated as
  --,(RollingPeopleVaccinated/population)*100
  From PortfolioProject1..coviddeaths dea
  join PortfolioProject1..CovidVaccinations vac
-	On dea.location = location
-	and dea.date = date
+	On dea.location = vac.location
+	and dea.date = vac.date
 where dea.continent is not null  
 --order by 2,3 
 
